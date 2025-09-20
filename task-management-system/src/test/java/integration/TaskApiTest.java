@@ -1,5 +1,6 @@
 package integration;
 
+import com.testing.taskmanager.TaskManagerApplication;
 import com.testing.taskmanager.entity.Task;
 import com.testing.taskmanager.entity.User;
 import io.restassured.RestAssured;
@@ -19,7 +20,7 @@ import static org.hamcrest.Matchers.notNullValue;
  * @author Gemini
  * @version 1.0
  */
-@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
+@SpringBootTest(classes = TaskManagerApplication.class, webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 public class TaskApiTest {
 
     @LocalServerPort
