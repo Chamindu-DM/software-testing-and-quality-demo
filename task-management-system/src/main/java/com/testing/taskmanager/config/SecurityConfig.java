@@ -7,7 +7,7 @@ import org.springframework.security.config.annotation.web.configuration.EnableWe
 import org.springframework.security.config.annotation.web.configurers.AbstractHttpConfigurer;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.header.writers.XXssProtectionHeaderWriter;
-import org.springframework.security.web.header.writers.frameoptions.XFrameOptionsHeaderWriter;
+import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 
 /**
  * Basic Spring Security configuration.
@@ -36,7 +36,12 @@ public class SecurityConfig {
                         .xssProtection(xss -> xss.headerValue(XXssProtectionHeaderWriter.HeaderValue.ENABLED_MODE_BLOCK))
                 )
                 .authorizeHttpRequests(authorize -> authorize
-                        .requestMatchers("/api/users/login", "/api/users/register", "/h2-console/**").permitAll()
+                        // Use AntPathRequestMatcher explicitly to avoid ambiguity with multiple servlets
+                        .requestMatchers(
+                            new AntPathRequestMatcher("/api/users/login"),
+                            new AntPathRequestMatcher("/api/users/register"),
+                            new AntPathRequestMatcher("/h2-console/**")
+                        ).permitAll()
                         .anyRequest().authenticated()
                 );
 
