@@ -6,6 +6,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.server.ResponseStatusException;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -20,7 +21,7 @@ public class ExpenseController {
     public ResponseEntity<Expense> createExpense(@RequestBody Expense expense) {
         // --- ADD THE VALIDATION LOGIC HERE ---
         if (expense.getAmount() < 0) {
-            throw new IllegalArgumentException("Amount cannot be a negative value");
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Amount cannot be a negative value");
         }
         // ------------------------------------
 
