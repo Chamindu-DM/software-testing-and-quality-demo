@@ -10,8 +10,6 @@ import org.openqa.selenium.support.PageFactory;
  * Page Object Model for the Login Page.
  * Encapsulates the elements and actions on the login page.
  *
- * @author Gemini
- * @version 1.0
  */
 public class LoginPage {
     private WebDriver driver;

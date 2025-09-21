@@ -10,8 +10,6 @@ import java.util.Optional;
 /**
  * Service class for handling User-related business logic.
  *
- * @author Gemini
- * @version 1.0
  */
 @Service
 public class UserService {

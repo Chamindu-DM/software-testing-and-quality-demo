@@ -13,9 +13,6 @@ import java.util.regex.Pattern;
 /**
  * Service class for handling Task-related business logic.
  * Includes methods for task creation, retrieval, and validation.
- *
- * @author Gemini
- * @version 1.0
  */
 @Service
 public class TaskService {

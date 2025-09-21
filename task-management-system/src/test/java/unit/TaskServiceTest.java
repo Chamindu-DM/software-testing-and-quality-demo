@@ -17,8 +17,6 @@ import static org.mockito.Mockito.*;
  * TDD-style unit tests for the TaskService.
  * Follows the Red-Green-Refactor cycle.
  *
- * @author Gemini
- * @version 1.0
  */
 @DisplayName("TaskService Unit Tests (TDD)")
 public class TaskServiceTest {

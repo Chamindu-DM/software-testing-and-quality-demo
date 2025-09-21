@@ -8,8 +8,6 @@ import org.openqa.selenium.support.PageFactory;
 /**
  * Page Object Model for the Dashboard/Task Management Page.
  *
- * @author Gemini
- * @version 1.0
  */
 public class DashboardPage {
     private WebDriver driver;

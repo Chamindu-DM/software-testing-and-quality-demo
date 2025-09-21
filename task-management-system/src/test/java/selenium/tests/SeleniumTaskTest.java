@@ -16,8 +16,6 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
  * Selenium UI automation tests for login and task creation.
  * Note: These tests assume a simple UI is running on a specific port.
  *
- * @author Gemini
- * @version 1.0
  */
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 @Disabled("Disabled until UI is properly configured with test environment")

@@ -11,8 +11,6 @@ import lombok.NoArgsConstructor;
 /**
  * Represents a User in the Task Management System.
  *
- * @author Gemini
- * @version 1.0
  */
 @Entity
 @Table(name = "app_user") // Using a different table name to avoid SQL reserved keyword conflict

@@ -18,8 +18,6 @@ import static org.mockito.Mockito.*;
 /**
  * TDD-style unit tests for the UserService.
  *
- * @author Gemini
- * @version 1.0
  */
 @DisplayName("UserService Unit Tests (TDD)")
 public class UserServiceTest {

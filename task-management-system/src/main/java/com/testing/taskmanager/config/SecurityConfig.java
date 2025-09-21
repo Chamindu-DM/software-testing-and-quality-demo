@@ -12,8 +12,6 @@ import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 /**
  * Basic Spring Security configuration.
  *
- * @author Gemini
- * @version 1.0
  */
 @Configuration
 @EnableWebSecurity

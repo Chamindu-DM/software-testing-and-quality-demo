@@ -10,8 +10,6 @@ import lombok.NoArgsConstructor;
 /**
  * Represents a Task in the Task Management System.
  *
- * @author Gemini
- * @version 1.0
  */
 @Entity
 @Data

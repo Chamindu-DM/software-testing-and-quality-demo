@@ -14,8 +14,6 @@ import java.util.logging.Logger;
 /**
  * REST controller for Task-related operations.
  *
- * @author Gemini
- * @version 1.0
  */
 @RestController
 @RequestMapping("/api/tasks")

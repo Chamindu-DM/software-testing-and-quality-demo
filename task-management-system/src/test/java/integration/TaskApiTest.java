@@ -9,6 +9,7 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.Disabled;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.web.server.LocalServerPort;
+import org.springframework.test.context.ContextConfiguration;
 
 import static io.restassured.RestAssured.given;
 import static org.hamcrest.Matchers.equalTo;
@@ -17,10 +18,9 @@ import static org.hamcrest.Matchers.notNullValue;
 /**
  * Integration tests for the Task API using REST Assured.
  *
- * @author Gemini
- * @version 1.0
  */
 @SpringBootTest(classes = TaskManagerApplication.class, webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
+@ContextConfiguration(classes = TaskManagerApplication.class)
 @Disabled("Disabled until the API endpoints are fully implemented")
 public class TaskApiTest {
 

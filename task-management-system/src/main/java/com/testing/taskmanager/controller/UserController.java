@@ -13,8 +13,6 @@ import java.util.logging.Logger;
 /**
  * REST controller for User-related operations.
  *
- * @author Gemini
- * @version 1.0
  */
 @RestController
 @RequestMapping("/api/users")
