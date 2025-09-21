@@ -19,9 +19,9 @@ public class ExpenseController {
 
     @PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<Expense> createExpense(@RequestBody Expense expense) {
-        // --- ADD THE VALIDATION LOGIC HERE ---
+        // --- CORRECTED VALIDATION LOGIC ---
         if (expense.getAmount() < 0) {
-            throw new IllegalArgumentException("Amount cannot be a negative value");
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Amount cannot be a negative value");
         }
         // ------------------------------------
 
