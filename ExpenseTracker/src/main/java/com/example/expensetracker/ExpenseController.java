@@ -1,4 +1,5 @@
 // src/main/java/com/example/expensetracker/ExpenseController.java
+
 package com.example.expensetracker;
 
 import org.springframework.http.HttpStatus;
@@ -17,9 +18,12 @@ public class ExpenseController {
 
     @PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<Expense> createExpense(@RequestBody Expense expense) {
+        // --- ADD THE VALIDATION LOGIC HERE ---
         if (expense.getAmount() < 0) {
             throw new IllegalArgumentException("Amount cannot be a negative value");
         }
+        // ------------------------------------
+
         expenses.add(expense);
         return new ResponseEntity<>(expense, HttpStatus.CREATED);
     }
@@ -28,4 +32,5 @@ public class ExpenseController {
     public List<Expense> getAllExpenses() {
         return expenses;
     }
+
 }
