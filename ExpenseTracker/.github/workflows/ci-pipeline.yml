@@ -25,7 +25,5 @@ jobs:
 
       - name: Run Maven Tests and Build Application
         run: |
-          # Change directory to the ExpenseTracker project
-          cd ExpenseTracker
           # Run tests and build the package
           mvn clean verify
