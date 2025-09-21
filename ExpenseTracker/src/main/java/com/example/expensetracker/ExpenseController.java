@@ -21,7 +21,7 @@ public class ExpenseController {
     public ResponseEntity<Expense> createExpense(@RequestBody Expense expense) {
         // This validation is a key part of security to prevent malicious data.
         if (expense.getAmount() < 0) {
-            throw new IllegalArgumentException("Amount cannot be a negative value");
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Amount cannot be a negative value");
         }
 
         expenses.add(expense);

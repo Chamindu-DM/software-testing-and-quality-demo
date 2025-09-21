@@ -11,6 +11,9 @@ import org.openqa.selenium.By;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import java.time.Duration;
 import java.util.UUID;
 
 public class ExpenseTrackerUITests {
@@ -46,6 +49,9 @@ public class ExpenseTrackerUITests {
     @Test
     void shouldFindFormElements() {
         driver.get(BASE_URL + "/add-expense.html");
+        // Example of an explicit wait
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("expense-description")));
         assertNotNull(driver.findElement(By.id("expense-description")));
         assertNotNull(driver.findElement(By.id("expense-amount")));
         assertNotNull(driver.findElement(By.id("submit-button")));
