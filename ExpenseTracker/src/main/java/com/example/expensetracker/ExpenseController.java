@@ -19,6 +19,7 @@ public class ExpenseController {
 
     @PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<Expense> createExpense(@RequestBody Expense expense) {
+        // This validation is a key part of security to prevent malicious data.
         if (expense.getAmount() < 0) {
             throw new IllegalArgumentException("Amount cannot be a negative value");
         }
@@ -27,9 +28,10 @@ public class ExpenseController {
         return new ResponseEntity<>(expense, HttpStatus.CREATED);
     }
 
-
     @GetMapping(produces = MediaType.APPLICATION_JSON_VALUE)
     public List<Expense> getAllExpenses() {
+        // This method does not use any user input in a database query,
+        // making it safe from SQL Injection.
         return expenses;
     }
 
