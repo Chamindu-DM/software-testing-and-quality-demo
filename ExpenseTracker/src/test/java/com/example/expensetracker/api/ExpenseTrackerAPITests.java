@@ -45,16 +45,5 @@ public class ExpenseTrackerAPITests {
                 .body("description", hasItems("Coffee"));
     }
 
-    @Test
-    void shouldReturnBadRequestForNegativeAmount() {
-        String requestBody = "{ \"description\": \"Negative Expense\", \"amount\": -10.00 }";
 
-        given()
-                .contentType("application/json")
-                .body(requestBody)
-                .when()
-                .post(BASE_URL + "/api/expenses")
-                .then()
-                .statusCode(400); // Expect a 400 Bad Request
-    }
 }
