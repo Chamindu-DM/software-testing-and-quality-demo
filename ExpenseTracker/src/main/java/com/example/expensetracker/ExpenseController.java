@@ -17,6 +17,9 @@ public class ExpenseController {
 
     @PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<Expense> createExpense(@RequestBody Expense expense) {
+        if (expense.getAmount() < 0) {
+            throw new IllegalArgumentException("Amount cannot be a negative value");
+        }
         expenses.add(expense);
         return new ResponseEntity<>(expense, HttpStatus.CREATED);
     }
